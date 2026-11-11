@@ -19,7 +19,7 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 if not DATABASE_URL:
     raise RuntimeError("Falta la variable de entorno DATABASE_URL.")
 
-# Render puede entregar postgres:// o postgresql://. psycopg 3 usa postgresql+psycopg://
+
 if DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql+psycopg://", 1)
 elif DATABASE_URL.startswith("postgresql://"):
